@@ -21,6 +21,54 @@ GIT
   specs:
     state_machine (1.2.0)
 
+PATH
+  remote: ../tramway-dev/tramway-admin
+  specs:
+    tramway-admin (1.12.0.2)
+      bootstrap-kaminari-views (= 0.0.5)
+      ckeditor (= 4.2.4)
+      copyright_mafa (~> 0.1.2, >= 0.1.2)
+      font-awesome-rails (~> 4.7, >= 4.7.0.1)
+      kaminari (~> 1.1.1, >= 1.1.1)
+      state_machine_buttons (~> 0.4.1, >= 0.4.1)
+
+PATH
+  remote: ../tramway-dev/tramway-core
+  specs:
+    tramway-core (1.9.9.3)
+      audited (>= 4.8.0)
+      bootstrap (>= 4.1.2)
+      carrierwave
+      enumerize (~> 2.1, >= 2.1.2)
+      font-awesome-rails
+      haml-rails (~> 1.0, >= 1.0.0)
+      kaminari
+      loofah (~> 2.2, >= 2.2.1)
+      mini_magick (~> 4.8, >= 4.8.0)
+      pg_search
+      reform
+      reform-rails (= 0.1.7)
+      rmagick (~> 2.16, >= 2.16.0)
+      sass-rails (~> 5.0, >= 5.0.7)
+      simple_form (~> 3.5, >= 3.5.0)
+
+PATH
+  remote: ../tramway-dev/tramway-landing
+  specs:
+    tramway-landing (1.4.7.4)
+
+PATH
+  remote: ../tramway-dev/tramway-profiles
+  specs:
+    tramway-profiles (1.2)
+
+PATH
+  remote: ../tramway-dev/tramway-user
+  specs:
+    tramway-user (1.1.8)
+      bcrypt (~> 3.1.11, >= 3.1.11)
+      enumerize (~> 2.1, >= 2.1.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -96,6 +144,7 @@ GEM
     climate_control (0.2.0)
     cocaine (0.6.0)
       terrapin (= 0.6.0)
+    coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -222,6 +271,9 @@ GEM
       activerecord (>= 4.2)
       activesupport (>= 4.2)
     popper_js (1.14.5)
+    pry (0.12.2)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
     public_suffix (3.0.3)
     puma (3.12.1)
     rack (2.0.7)
@@ -313,34 +365,6 @@ GEM
     tilt (2.0.9)
     time_difference (0.7.0)
       activesupport (~> 5.1)
-    tramway-admin (1.12.0.2)
-      bootstrap-kaminari-views (= 0.0.5)
-      ckeditor (= 4.2.4)
-      copyright_mafa (~> 0.1.2, >= 0.1.2)
-      font-awesome-rails (~> 4.7, >= 4.7.0.1)
-      kaminari (~> 1.1.1, >= 1.1.1)
-      state_machine_buttons (~> 0.4.1, >= 0.4.1)
-    tramway-core (1.9.9.2)
-      audited (>= 4.8.0)
-      bootstrap (>= 4.1.2)
-      carrierwave
-      enumerize (~> 2.1, >= 2.1.2)
-      font-awesome-rails
-      haml-rails (~> 1.0, >= 1.0.0)
-      kaminari
-      loofah (~> 2.2, >= 2.2.1)
-      mini_magick (~> 4.8, >= 4.8.0)
-      pg_search
-      reform
-      reform-rails (= 0.1.7)
-      rmagick (~> 2.16, >= 2.16.0)
-      sass-rails (~> 5.0, >= 5.0.7)
-      simple_form (~> 3.5, >= 3.5.0)
-    tramway-landing (1.4.7.3)
-    tramway-profiles (1.2)
-    tramway-user (1.1.8)
-      bcrypt (~> 3.1.11, >= 3.1.11)
-      enumerize (~> 2.1, >= 2.1.2)
     trap (2.1)
     turbolinks (5.2.0)
       turbolinks-source (~> 5.2)
@@ -385,6 +409,7 @@ DEPENDENCIES
   mini_magick
   more_html_tags (>= 0.2.0)
   pg_search
+  pry
   puma (~> 3.7)
   rails (~> 5.1.7)
   rmagick
@@ -398,11 +423,11 @@ DEPENDENCIES
   state_machine!
   state_machine_buttons
   time_difference
-  tramway-admin (= 1.12.0.2)
-  tramway-core (= 1.9.9.2)
-  tramway-landing (= 1.4.7.3)
-  tramway-profiles
-  tramway-user
+  tramway-admin!
+  tramway-core!
+  tramway-landing!
+  tramway-profiles!
+  tramway-user!
   trap
   turbolinks (~> 5)
   tzinfo-data
