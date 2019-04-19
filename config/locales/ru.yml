@@ -1,0 +1,9 @@
+ru:
+  activerecord:
+    models:
+      user: Пользователь
+      tramway/user/user: Админ
+  cases:
+    user:
+      plural: Пользователи
+      genitive: пользователя
