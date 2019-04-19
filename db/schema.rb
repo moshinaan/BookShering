@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190417202140) do
+ActiveRecord::Schema.define(version: 20190419211822) do
 
   create_table "audits", force: :cascade do |t|
     t.integer "auditable_id"
@@ -61,21 +61,8 @@ ActiveRecord::Schema.define(version: 20190417202140) do
     t.index ["user_id"], name: "index_books_on_user_id"
   end
 
-  create_table "tramway_landing_blocks", force: :cascade do |t|
-    t.text "title"
-    t.text "background"
-    t.text "block_type"
-    t.integer "position"
-    t.text "state", default: "active"
-    t.text "view_state", default: "hidden"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text "navbar_link", default: "not_exist"
-    t.text "anchor"
-    t.text "description"
-    t.integer "link_object_id"
-    t.text "link_object_type"
-  end
+# Could not dump table "tramway_landing_blocks" because of following StandardError
+#   Unknown type 'jsonb' for column 'button'
 
   create_table "tramway_user_users", force: :cascade do |t|
     t.text "email"

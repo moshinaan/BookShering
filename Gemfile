@@ -18,7 +18,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'tramway-core', '1.9.9.3'
 gem 'tramway-user'
 gem 'tramway-admin', '1.12.0.2'
-gem 'tramway-landing', '1.4.7.4'
+gem 'tramway-landing', '1.5'
 gem 'tramway-profiles'
 
 #gem 'tramway-core', path: '../tramway-dev/tramway-core'
