@@ -6,4 +6,4 @@ ru:
   cases:
     user:
       plural: Пользователи
-      genitive: пользователя
+      genitive: пользователя+
