@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20190420190601) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "state"
+    t.index ["user_id"], name: "index_books_on_user_id"
   end
 
 # Could not dump table "tramway_landing_blocks" because of following StandardError
