@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  get 'users/new'
+  get  '/signup',  to: 'users#new'
+  post '/signup',  to: 'users#create'
+
+
 
   mount Tramway::Admin::Engine, at: '/admin'
   mount Tramway::User::Engine, at: '/users'
