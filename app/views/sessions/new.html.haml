@@ -1,0 +1,19 @@
+= simple_form_for :session, url: login_path, html: { multipart: true }, input_html: { class: 'form-horizontal' } do |f|
+
+  %table
+    %tr
+      %td
+        = f.label :email
+      %td
+        = f.input_field :email
+        = f.error :email
+    %tr
+      %td
+        = f.label :password
+      %td
+        = f.input_field :password
+        = f.error :password
+    %tr
+      %td
+      %td{:colspan => "5"}
+        = f.submit "Войти"
