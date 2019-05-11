@@ -23,9 +23,13 @@ class User < ApplicationRecord
 
   #связывает remember-токен 
   #с пользователем и сохраняет соответствующий remember-дайджест в базу данных
+
+
+  # ВОТ ЗДЕСЬ БЫЛА ОПЕЧАТКА
+
   def remember
-    self.remember_token = ...
-    update_attribute(:remember_digest, ...)
+    #self.remember_token = ...
+    #update_attribute(:remember_digest, ...)
   end
 
   # Возвращает true, если предоставленный токен совпадает с дайджестом.
