@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+
+	attr_accessor :remember_token
+
 	has_many :books, class_name: 'Book'
 	has_many :bookcases, class_name: 'Bookcase'
 
@@ -12,4 +15,22 @@ class User < ApplicationRecord
 
 	has_secure_password
 	validates(:password, presence: true, length: { minimum: 6 })
+
+  # Возвращает случайный токен
+  def User.new_token
+    SecureRandom.urlsafe_base64
+  end
+
+  #связывает remember-токен 
+  #с пользователем и сохраняет соответствующий remember-дайджест в базу данных
+  def remember
+    self.remember_token = ...
+    update_attribute(:remember_digest, ...)
+  end
+
+  # Возвращает true, если предоставленный токен совпадает с дайджестом.
+  def authenticated?(remember_token)
+    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  end
 end
+
