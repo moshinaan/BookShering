@@ -16,7 +16,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
-gem 'tramway-core', '1.9.9.3'
+gem 'tramway-core', '1.10'
 gem 'tramway-user', '2.0'
 gem 'tramway-auth', '1.0'
 gem 'tramway-admin', '1.12.0.4'

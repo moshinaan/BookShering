@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20190511201508) do
   end
 
   create_table "books", force: :cascade do |t|
-    t.string "status"
+    t.string "status" 
     t.string "name"
     t.string "author"
     t.string "publishing"
