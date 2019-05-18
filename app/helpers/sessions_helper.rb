@@ -26,7 +26,7 @@ module SessionsHelper
 
   # Забывает постоянную сессии.
   def forget(user)
-    user.forget
+    #user.forget
     cookies.delete(:user_id)
     cookies.delete(:remember_token)
   end

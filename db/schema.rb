@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190511201508) do
+ActiveRecord::Schema.define(version: 20190518213343) do
 
   create_table "audits", force: :cascade do |t|
     t.integer "auditable_id"
@@ -34,6 +34,12 @@ ActiveRecord::Schema.define(version: 20190511201508) do
     t.index ["user_id", "user_type"], name: "user_index"
   end
 
+  create_table "authors", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "name"
+  end
+
   create_table "bookcases", force: :cascade do |t|
     t.integer "book_id"
     t.integer "user_id"
@@ -47,10 +53,7 @@ ActiveRecord::Schema.define(version: 20190511201508) do
   end
 
   create_table "books", force: :cascade do |t|
-    t.string "status" 
-    t.string "name"
-    t.string "author"
-    t.string "publishing"
+    t.string "status"
     t.integer "year_publishing"
     t.integer "age_restrictions"
     t.integer "user_id"
@@ -58,6 +61,9 @@ ActiveRecord::Schema.define(version: 20190511201508) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "state"
+    t.integer "author_id"
+    t.text "name"
+    t.text "publishing"
   end
 
 # Could not dump table "tramway_landing_blocks" because of following StandardError
@@ -77,15 +83,15 @@ ActiveRecord::Schema.define(version: 20190511201508) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
     t.datetime "date_birth"
-    t.string "city"
-    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "state"
     t.string "password_digest"
     t.string "remember_digest"
+    t.text "name"
+    t.text "city"
+    t.text "email"
   end
 
 end
