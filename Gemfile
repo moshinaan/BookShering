@@ -51,6 +51,7 @@ gem 'russia_regions', '0.0.6'
 gem 'russian'
 gem 'time_difference'
 gem 'font-awesome-rails'
+gem 'roo'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

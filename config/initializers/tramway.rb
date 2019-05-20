@@ -2,4 +2,6 @@
 ::Tramway::Admin.set_available_models User,
   Tramway::User::User,
   Tramway::Landing::Block,
+  Book,
+  Author,
   project: :bookshering

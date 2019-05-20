@@ -268,6 +268,9 @@ GEM
       declarative-option (< 0.2.0)
       uber (< 0.2.0)
     rmagick (2.16.0)
+    roo (2.8.2)
+      nokogiri (~> 1)
+      rubyzip (>= 1.2.1, < 2.0.0)
     ruby_dep (1.5.0)
     ruby_parser (3.13.1)
       sexp_processor (~> 4.9)
@@ -393,6 +396,7 @@ DEPENDENCIES
   puma (~> 3.7)
   rails (~> 5.1.7)
   rmagick
+  roo
   russia_regions (= 0.0.6)
   russian
   sass-rails (~> 5.0)
