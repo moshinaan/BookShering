@@ -5,6 +5,7 @@ class UserDecorator < Tramway::Core::ApplicationDecorator
 		end
 	end
 
+
 	decorate_association :books
 	decorate_association :bookcases
 end

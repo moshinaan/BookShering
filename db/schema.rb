@@ -62,10 +62,10 @@ ActiveRecord::Schema.define(version: 20190520212441) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "state"
-    t.text "name"
     t.integer "author_id"
+    t.text "name"
+    t.text "publishing"
     t.integer "publisher_id"
-    t.index ["user_id"], name: "index_books_on_user_id"
   end
 
   create_table "publishers", force: :cascade do |t|
@@ -91,13 +91,13 @@ ActiveRecord::Schema.define(version: 20190520212441) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
     t.datetime "date_birth"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "state"
     t.string "password_digest"
     t.string "remember_digest"
+    t.text "name"
     t.text "city"
     t.text "email"
   end
