@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
-  resources :microposts
+  resources :books
 
 
   mount Tramway::Admin::Engine, at: '/admin'

@@ -1,0 +1,36 @@
+= simple_form_for @book, url: {action: "create"}, html: { multipart: true }, input_html: { class: 'form-horizontal' } do |f|
+  %table
+    %tr
+      %td
+        = f.label :name
+      %td
+        = f.input_field :name
+        = f.error :name 
+    %tr
+      %td
+        = f.label :author_id
+      %td
+        = f.input_field :author_id
+        = f.error :author_id
+    %tr
+      %td
+        = f.label :age_restrictions
+      %td
+        = f.input_field :age_restrictions
+        = f.error :age_restrictions
+    %tr
+      %td
+        = f.label :publishing
+      %td
+        = f.input_field :publishing
+        = f.error :publishing
+    %tr
+      %td
+        = f.label :year_publishing
+      %td
+        = f.input_field :year_publishing
+        = f.error :year_publishing
+    %tr
+      %td
+      %td{:colspan => "5"}
+        = f.submit "Create"

@@ -1,20 +1,20 @@
 class UsersController < ApplicationController
   layout 'tramway/landing/application'
 	def show
-    	@user = User.find(params[:id])
-  	end
+    user = User.find(params[:id])
+  end
 
-  	def new
-  		@user = User.new
-  	end
+  def new
+    @user = User.new
+  end
 
-  	def create
-    	@user = User.new(user_params)
+  def create
+   	@user = User.new(user_params)
 
 		if @user.save
 			redirect_to @user
 		else
-      		render 'new'
+      	render 'new'
     	end
   	end
 
@@ -23,7 +23,5 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :date_birth, :city, 
       	:password,:password_confirmation)
     end
-
-
 end
 
