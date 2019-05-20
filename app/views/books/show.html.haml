@@ -5,7 +5,7 @@
       Название
     %td
       = @book.name
-    %td
+  %tr
     %td
       Статус
     %td
@@ -14,21 +14,22 @@
     %td
       Автор
     %td
-      = @user.author_id
-   %tr
+      = @book.author_id
+  %tr
     %td
       Возрастные ограничения
     %td
-      = @user.age_restrictions
+      = @book.age_restrictions
+      + 
   %tr
     %td
       Издательство
     %td
-      = @user.publishing
+      = @book.publishing
   %tr
     %td
       Год издания
     %td
-      = @user.year_publishing
+      = @book.year_publishing
 
   
