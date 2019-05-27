@@ -16,7 +16,7 @@ class BookDecorator < Tramway::Core::ApplicationDecorator
   delegate :bookcases, to: :object
 
   def author
-    object.author&.name
+    object.author&.name # но тебе не нужно это делать, потому что в рамках декоратора book_decorator ты описываешь ровно тот набор полей, который тебе нужен, в том числе и имя автора, как здесь
   end
 
   def publisher

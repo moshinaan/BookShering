@@ -1,5 +1,5 @@
 class Book < ApplicationRecord
-  belongs_to :author
+  belongs_to :author # вот эта связь говорит о том, что ты можешь вызывать у объекта Book метод author и получать объект автора. Типа так @book.author. а теперь в book_decorator
   belongs_to :publisher
   has_many :bookcases
 
