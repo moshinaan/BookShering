@@ -1,8 +1,6 @@
 class BooksController < ApplicationController
   def show
-    @book = Book.find(params[:id])
-    @author_id = @book.author_id # зачем тебе @author_id, ты используешь его во вьюхе?
-    @author = Author.where(:id => @author_id ) # отдельно запрашивать автора не нужно, у тебя же есть связи между моделями. Иди в модель Book
+    @book = Web::BookDecorator.new Book.find(params[:id])
   end
 
   def new
