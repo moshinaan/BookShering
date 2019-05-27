@@ -1,5 +1,6 @@
 class Book < ApplicationRecord
   belongs_to :author
+  belongs_to :publisher
   has_many :bookcases
 
   validates :name, presence: true#, uniqueness: { case_sensitive: false }

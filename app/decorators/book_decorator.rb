@@ -5,11 +5,11 @@ class BookDecorator < Tramway::Core::ApplicationDecorator
     end
 
     def list_attributes
-      [:author]
+      [:author, :publisher, :year_publishing, :age_restrictions]
     end
 
     def show_attributes
-      [:name, :author]
+      [:name, :author, :publisher, :year_publishing, :age_restrictions]
     end
   end
 
@@ -17,5 +17,17 @@ class BookDecorator < Tramway::Core::ApplicationDecorator
 
   def author
     object.author&.name
+  end
+
+  def publisher
+    object.publisher&.name
+  end
+
+  def year_publishing
+    object.year_publishing
+  end
+
+  def age_restrictions 
+    object.age_restrictions 
   end
 end

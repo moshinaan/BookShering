@@ -4,4 +4,5 @@
   Tramway::Landing::Block,
   Book,
   Author,
+  Publisher,
   project: :bookshering

@@ -1,6 +1,8 @@
 class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
+    @author_id = @book.author_id
+    @author = Author.where(:id => @author_id )
   end
 
   def new
@@ -10,8 +12,7 @@ class BooksController < ApplicationController
   def create
     @book = CollectionBooksForm.new Book.new
     if @book.submit params[:book]
-      @book.status = 'не занята'
-      redirect_to @book.model
+
     else
       render 'new'
     end

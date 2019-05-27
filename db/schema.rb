@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190520212441) do
+ActiveRecord::Schema.define(version: 20190527160117) do
 
   create_table "audits", force: :cascade do |t|
     t.integer "auditable_id"
@@ -62,16 +62,17 @@ ActiveRecord::Schema.define(version: 20190520212441) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "state"
-    t.integer "author_id"
     t.text "name"
-    t.text "publishing"
+    t.integer "author_id"
     t.integer "publisher_id"
+    t.index ["user_id"], name: "index_books_on_user_id"
   end
 
   create_table "publishers", force: :cascade do |t|
     t.text "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "state"
   end
 
 # Could not dump table "tramway_landing_blocks" because of following StandardError
@@ -91,13 +92,13 @@ ActiveRecord::Schema.define(version: 20190520212441) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.datetime "date_birth"
+    t.string "name"
+    t.date "date_birth"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "state"
     t.string "password_digest"
     t.string "remember_digest"
-    t.text "name"
     t.text "city"
     t.text "email"
   end
