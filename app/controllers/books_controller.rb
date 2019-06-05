@@ -1,12 +1,7 @@
 class BooksController < ApplicationController
   def show
-    @book = Book.find(params[:id])
+  @book = Web::BookDecorator.new Book.find(params[:id])
 
-    @publisher_id = @book.publisher_id
-    @publisher = Publisher.where(:id => @publisher_id)
-
-    @author_id = @book.author_id
-    @author = Author.where(:id => @author_id )
   end
 
   def new
