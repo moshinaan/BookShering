@@ -1,25 +1,23 @@
-= simple_form_for :session, url: login_path, html: { multipart: true }, input_html: { class: 'form-horizontal' } do |f|
-
+= simple_form_for @user, url: { controller: :sessions, action: :create}, method: :post, html: { multipart: true }, input_html: { class: 'form-horizontal' } do |f|
   %table
     %tr
       %td
         = f.label :email
       %td
-        = f.input_field :email
-        = f.error :email
+        = f.input :email, as: :string, label: false
     %tr
       %td
         = f.label :password
       %td
-        = f.input_field :password
-        = @user.error :password
+        = f.input :password, label: false
     %tr
       %td
       %td{:colspan => "5"}
         = f.submit "Войти"
-    %tr
-      %td
-      %td
-        = f.label :remember_me, class: "checkbox inline" do
-          = f.check_box :remember_me
-          Запомнить меня
+    -# NOTE эту фичу имплементируем позже
+      %tr
+        %td
+        %td
+          = f.label :remember_me, class: "checkbox inline" do
+            = f.check_box :remember_me
+            Запомнить меня
