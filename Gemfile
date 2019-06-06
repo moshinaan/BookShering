@@ -25,12 +25,6 @@ gem 'tramway-admin', '1.12.0.7'
 gem 'tramway-landing', '1.5.1.2'
 gem 'tramway-profiles', '1.2'
 
-#gem 'tramway-core', path: '../tramway-dev/tramway-core'
-#gem 'tramway-user', path: '../tramway-dev/tramway-user'
-#gem 'tramway-admin', path: '../tramway-dev/tramway-admin'
-#gem 'tramway-landing', path: '../tramway-dev/tramway-landing'
-#gem 'tramway-profiles', path: '../tramway-dev/tramway-profiles'
-
 gem 'state_machine', github: 'seuros/state_machine'
 gem 'pg_search'
 gem 'haml-rails'
