@@ -7,8 +7,7 @@
       %td
         = f.label :email
       %td
-        = f.input_field :email
-        = f.error :email
+        = f.input :email, as: :string, label: false
     %tr
       %td
         = f.label :password
