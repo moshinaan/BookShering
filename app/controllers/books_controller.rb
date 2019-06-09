@@ -1,7 +1,6 @@
 class BooksController < ApplicationController
   def show
-  @book = Web::BookDecorator.new Book.find(params[:id])
-
+    @book = Web::BookDecorator.new Book.find(params[:id])
   end
 
   def new

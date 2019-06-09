@@ -8,16 +8,14 @@ class SessionsController < ApplicationController
   	@user = User.find_by(email: params[:user][:email].downcase)
     
     if @user && @user.authenticate(params[:user][:password])
-
+      @current_user=current_user 
       #войти
       log_in @user
       # NOTE имплементируем позже
       #params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
       redirect_to @user
-
    	else  
       if @user.class == NilClass
-
         @user = User.first
         @user.errors.add(:email, "неверный email")
         render 'new'

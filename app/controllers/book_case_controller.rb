@@ -1,0 +1,3 @@
+class BookCaseController < ApplicationController
+	
+end

@@ -12,10 +12,11 @@ class UsersController < ApplicationController
    	@user = User.new(user_params)
 
 		if @user.save
-			redirect_to @user
+      @user.errors.add(:password, "введите пароль для авторизации")
+			render 'sessions/new'
 		else
-        render 'new'
-    	end
+      render 'new'
+    end
   	end
 
   	private
