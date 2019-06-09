@@ -15,10 +15,16 @@ class SessionsController < ApplicationController
       #params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
       redirect_to @user
 
-   	else
-      
-      @user.errors.add(:password, "хуйня ебаная")
-      render 'new'
+   	else  
+      if @user.class == NilClass
+
+        @user = User.first
+        @user.errors.add(:email, "неверный email")
+        render 'new'
+      else
+        @user.errors.add(:password, "неверный пароль")
+        render 'new'
+      end
   	end
   end
 
