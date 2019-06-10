@@ -1,5 +1,12 @@
 class UsersController < ApplicationController
   layout 'tramway/landing/application'
+
+  def current_user
+    @current_user = current_user
+    pry
+
+  end
+
 	def show
     @user = User.find(params[:id])
   end
@@ -12,17 +19,17 @@ class UsersController < ApplicationController
    	@user = User.new(user_params)
 
 		if @user.save
-      @user.errors.add(:password, "введите пароль для авторизации")
+      @user.errors.add(:password, "Введите пароль для авторизации")
 			render 'sessions/new'
 		else
       render 'new'
     end
-  	end
+  end
 
-  	private
-  	def user_params
-      params.require(:user).permit(:name, :email, :date_birth, :city, 
-      	:password,:password_confirmation)
-    end
+  private
+  def user_params
+    params.require(:user).permit(:name, :email, :date_birth, :city, 
+      :password,:password_confirmation)
+  end
 end
 
