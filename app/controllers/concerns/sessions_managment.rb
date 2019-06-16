@@ -1,39 +1,41 @@
-module Concerns::SessionsManagment
-  # Осуществляет вход данного пользователя.
-  def log_in(user)
-    session[:user_id] = user.id
-  end
-
-  # Запоминает пользователя в постоянную сессию.
-  def remember(user)
-    user.remember
-    cookies.permanent.signed[:user_id] = user.id
-    cookies.permanent[:remember_token] = user.remember_token
-  end
-
-  #Возвращает пользователя, соответствующего remember-токену в куки.
-  def current_user
-    if (user_id = session[:user_id])
-      @current_user ||= User.find_by(id: user_id)
+module Concerns
+  module SessionsManagment
+    # Осуществляет вход данного пользователя.
+    def log_in(user)
+      session[:user_id] = user.id
     end
-  end
 
-  # Забывает постоянную сессии.
-  def forget(user)
-    #user.forget
-    cookies.delete(:user_id)
-    cookies.delete(:remember_token)
-  end
+    # Запоминает пользователя в постоянную сессию.
+    def remember(user)
+      user.remember
+      cookies.permanent.signed[:user_id] = user.id
+      cookies.permanent[:remember_token] = user.remember_token
+    end
 
-  # Возвращает true, если пользователь вошел, иначе false.
-  def logged_in?
-    !current_user.nil?
-  end
+    #Возвращает пользователя, соответствующего remember-токену в куки.
+    def current_user
+      if (user_id = session[:user_id])
+        @current_user ||= User.find_by(id: user_id)
+      end
+    end
 
-  # Осуществляет выход текущего пользователя.
-  def log_out
-  	forget(current_user)
-    session.delete(:user_id)
-    @current_user = nil
+    # Забывает постоянную сессии.
+    def forget(user)
+      #user.forget
+      cookies.delete(:user_id)
+      cookies.delete(:remember_token)
+    end
+
+    # Возвращает true, если пользователь вошел, иначе false.
+    def logged_in?
+      !current_user.nil?
+    end
+
+    # Осуществляет выход текущего пользователя.
+    def log_out
+      forget(current_user)
+      session.delete(:user_id)
+      @current_user = nil
+    end
   end
 end
