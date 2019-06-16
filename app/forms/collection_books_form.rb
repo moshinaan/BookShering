@@ -20,6 +20,7 @@ class CollectionBooksForm < Tramway::Core::ExtendedApplicationForm
       model.age_restrictions = row[4]
       model.status = 'доступна'
       model.user_id = params[:user_id]
+      model.user_current = params[:user_current]
     end
     super
   end
