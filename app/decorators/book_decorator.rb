@@ -23,8 +23,10 @@ class BookDecorator < Tramway::Core::ApplicationDecorator
     object.user&.name
   end
 
+
+  #работает  через жопу, КАК РАБОТАЕТ ЭТА ШТУКА?
   def current_user
-    object.current_user&.name
+    object.user&.name
   end
 
   def status
