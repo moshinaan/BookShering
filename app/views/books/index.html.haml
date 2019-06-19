@@ -1,0 +1,16 @@
+Список доступной литературы
+%table{:border => 1}
+  %th Название
+  %th Автор
+  %th Возрастные ограничения
+  %th Статус  
+  -@books.each do |books|
+    %tr
+      %td
+        = books.name  
+      %td
+        = books.author.name
+      %td
+        = books.age_restrictions
+      %td
+        = books.status
