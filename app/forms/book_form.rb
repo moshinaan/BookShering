@@ -6,6 +6,7 @@ class BookForm < Tramway::Core::ApplicationForm
     		form_properties name: :text,
     		                status: :text,
     		                author: :string,
+                            heading: :string,
     		                publisher: :string,
     		                age_restrictions: :date_picker,
     						year_publishing: :date_picker

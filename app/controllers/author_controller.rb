@@ -8,3 +8,5 @@ class AuthorController < ApplicationController
 	def destroy
 	end
 end
+
+

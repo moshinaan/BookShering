@@ -5,11 +5,11 @@ class BookDecorator < Tramway::Core::ApplicationDecorator
     end
 
     def list_attributes
-      [:author, :status, :publisher, :year_publishing, :age_restrictions, :user, :current_user]
+      [:author, :status, :heading, :publisher, :year_publishing, :age_restrictions, :user, :current_user]
     end
 
     def show_attributes
-      [:name, :author, :publisher, :year_publishing, :age_restrictions]
+      [:name, :author,:heading, :publisher, :year_publishing, :age_restrictions]
     end
   end
 
@@ -23,14 +23,16 @@ class BookDecorator < Tramway::Core::ApplicationDecorator
     object.user&.name
   end
 
-
-  #работает  через жопу, КАК РАБОТАЕТ ЭТА ШТУКА?
   def current_user
     object.user&.name
   end
 
   def status
     object.status
+  end
+
+  def heading
+    object.heading&.name
   end
 
   def publisher

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190527160117) do
+ActiveRecord::Schema.define(version: 20190627192200) do
 
   create_table "audits", force: :cascade do |t|
     t.integer "auditable_id"
@@ -64,8 +64,16 @@ ActiveRecord::Schema.define(version: 20190527160117) do
     t.text "state"
     t.text "name"
     t.integer "author_id"
+    t.integer "heading"
     t.integer "publisher_id"
     t.index ["user_id"], name: "index_books_on_user_id"
+  end
+
+  create_table "headings", force: :cascade do |t|
+    t.text "name"
+    t.text "state"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "publishers", force: :cascade do |t|

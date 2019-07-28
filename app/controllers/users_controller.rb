@@ -3,8 +3,6 @@ class UsersController < ApplicationController
 
   def current_user
     @current_user = current_user
-    pry
-
   end
 
 	def show

@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   before_action :authenticate, only: [:new, :create]
 
   def index
-    @books = Book.all.page(10)
+    @books = Book.all.page(10).per(10)
   end
 
   def show
