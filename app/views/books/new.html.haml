@@ -1,3 +1,51 @@
+:javascript
+  function addRow(id){
+
+    var tbody = document.getElementById(id).getElementsByTagName("TBODY")[0];
+    var row = document.createElement("TR")
+
+    var td1 = document.createElement("TD")
+    td1.appendChild(document.createElement("input"))
+
+    var td2 = document.createElement("TD")
+    td2.appendChild (document.createElement("input"))
+
+    var td3 = document.createElement("TD")
+    td3.appendChild (document.getElementById("selectNumber"))
+
+    var td4 = document.createElement("TD")
+    td4.appendChild (document.createElement("input"))
+
+    var td5 = document.createElement("TD")
+    td5.appendChild (document.createElement("input"))
+
+    var td6 = document.createElement("TD")
+    td6.appendChild (document.createElement("input"))
+
+    row.appendChild(td1);
+    row.appendChild(td2);
+    row.appendChild(td3);
+    row.appendChild(td4);
+    row.appendChild(td5);
+    row.appendChild(td6);
+    tbody.appendChild(row);
+}
+
+%center
+  %h1 Добавить книги на сайт
+  
+  %table#myTable{:border => "1", :cellspacing => "0"}
+    %tbody
+      %tr
+        %td Автор
+        %td Название
+        %td Возрастные ограничения
+        %td Жанр
+        %td Издательство
+        %td Год издания
+  %a{:href => "javascript://", :onclick => "addRow('myTable');return false;"} Добавить книгу в список
+
 = simple_form_for @book, url: {action: "create"}, html: { multipart: true }, input_html: { class: 'form-horizontal' } do |f|
   = f.input :book_file, as: :file
   = f.submit "Create", class: 'button'
+
