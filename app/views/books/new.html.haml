@@ -1,3 +1,5 @@
+
+
 :javascript
   function deleteRow(row) {
   var i = row.parentNode.parentNode.rowIndex;
@@ -21,9 +23,10 @@
   }
 
 #POItablediv
-  %table#POITable{:border => "1",:class => "table table-borderless table-dark"}
-    %tr
-      %td №
+  %table#POITable{:border => "1",:class =>"table table-striped table-dark"}
+    %thead
+    %tr 
+      %th №
       %td Название
       %td Автор
       %td Жанр
@@ -36,17 +39,46 @@
     %tr
       %td 1
       %td
-        %input#latbox{:size => "25", :type => "text"}
+        %input#latbox{:type => "text"}
       %td
-        %input#latbox1{:size => "25", :type => "text"}
+        %input#latbox1{:type => "text"}
       %td
-        %input#latbox1{:size => "25", :type => "text"}
+        .input-group.mb-3
+        .input-group-prepend
+          %label.input-group-text{:for => "inputGroupSelect01"}
+          %select#inputGroupSelect01.custom-select
+            %option{:selected => "selected"} Нет
+            %option{:value => "Художественная литература"} Художественная литература 
+            %option{:value => "Книги для детей"} Книги для детей
+            %option{:value => "Образование"} Образование
+            %option{:value => "Наука и техника "} Наука и техника 
+            %option{:value => "Общество"} Общество
+            %option{:value => "Деловая литература"} Деловая литература
+            %option{:value => "Красота"} Красота
+            %option{:value => "Здоровье"} Здоровье
+            %option{:value => "Спорт"} Спорт
+            %option{:value => "Увлечения"} Увлечения
+            %option{:value => "Психология"} Психология
+            %option{:value => "Эзотерика"} Эзотерика
+            %option{:value => "Философия и религия"} Философия и религия
+            %option{:value => "Искусство"} Искусство
+            %option{:value => "Подарочные издания"} Подарочные издания
+            %option{:value => "Книги на иностранных языках"} Книги на иностранных языках
       %td
-        %input#latbox1{:size => "25", :type => "text"}
+        %input#latbox1{:type => "text"}
       %td
-        %input#latbox1{:size => "25", :type => "number"}
+        %input#latbox1{:type => "number"}
       %td
-        %input#latbox1{:size => "25", :type => "number"}
+        .input-group.mb-3
+        .input-group-prepend
+          %label.input-group-text{:for => "inputGroupSelect01"}
+          %select#inputGroupSelect01.custom-select
+            %option{:selected => "selected"} Нет
+            %option{:value => "0"} 0+ 
+            %option{:value => "6"} 6+
+            %option{:value =>"12"} 12+
+            %option{:value => "16"} 16+
+            %option{:value => "18"} 18+
       %td 
         %input#delPOIbutton{:onclick => "deleteRow(this)", :type => "image",  :src => "del.png" }
       %td
@@ -56,3 +88,5 @@
 = simple_form_for @book, url: {action: "create"}, html: { multipart: true }, input_html: { class: 'form-horizontal' } do |f|
   = f.input :book_file, as: :file
   = f.submit "Create", class: 'button'
+
+
