@@ -1,51 +1,58 @@
 :javascript
-  function addRow(id){
-
-    var tbody = document.getElementById(id).getElementsByTagName("TBODY")[0];
-    var row = document.createElement("TR")
-
-    var td1 = document.createElement("TD")
-    td1.appendChild(document.createElement("input"))
-
-    var td2 = document.createElement("TD")
-    td2.appendChild (document.createElement("input"))
-
-    var td3 = document.createElement("TD")
-    td3.appendChild (document.getElementById("selectNumber"))
-
-    var td4 = document.createElement("TD")
-    td4.appendChild (document.createElement("input"))
-
-    var td5 = document.createElement("TD")
-    td5.appendChild (document.createElement("input"))
-
-    var td6 = document.createElement("TD")
-    td6.appendChild (document.createElement("input"))
-
-    row.appendChild(td1);
-    row.appendChild(td2);
-    row.appendChild(td3);
-    row.appendChild(td4);
-    row.appendChild(td5);
-    row.appendChild(td6);
-    tbody.appendChild(row);
-}
-
-%center
-  %h1 Добавить книги на сайт
+  function deleteRow(row) {
+  var i = row.parentNode.parentNode.rowIndex;
+  document.getElementById('POITable').deleteRow(i);
+  }
   
-  %table#myTable{:border => "1", :cellspacing => "0"}
-    %tbody
-      %tr
-        %td Автор
-        %td Название
-        %td Возрастные ограничения
-        %td Жанр
-        %td Издательство
-        %td Год издания
-  %a{:href => "javascript://", :onclick => "addRow('myTable');return false;"} Добавить книгу в список
+  
+  function insRow() {
+  var x = document.getElementById('POITable');
+  var new_row = x.rows[1].cloneNode(true);
+  var len = x.rows.length;
+  new_row.cells[0].innerHTML = len;
+  
+  var inp1 = new_row.cells[1].getElementsByTagName('input')[0];
+  inp1.id += len;
+  inp1.value = '';
+  var inp2 = new_row.cells[2].getElementsByTagName('input')[0];
+  inp2.id += len;
+  inp2.value = '';
+  x.appendChild(new_row);
+  }
+
+#POItablediv
+  %table#POITable{:border => "1",:class => "table table-borderless table-dark"}
+    %tr
+      %td №
+      %td Название
+      %td Автор
+      %td Жанр
+      %td Издательство
+      %td Год издания
+      %td Возрастные ограничениия
+      %td 
+      %td
+
+    %tr
+      %td 1
+      %td
+        %input#latbox{:size => "25", :type => "text"}
+      %td
+        %input#latbox1{:size => "25", :type => "text"}
+      %td
+        %input#latbox1{:size => "25", :type => "text"}
+      %td
+        %input#latbox1{:size => "25", :type => "text"}
+      %td
+        %input#latbox1{:size => "25", :type => "number"}
+      %td
+        %input#latbox1{:size => "25", :type => "number"}
+      %td 
+        %input#delPOIbutton{:onclick => "deleteRow(this)", :type => "image",  :src => "del.png" }
+      %td
+        %input#addmorePOIbutton{:onclick => "insRow()", :type => "button",:value => "Add More POIs"}
+
 
 = simple_form_for @book, url: {action: "create"}, html: { multipart: true }, input_html: { class: 'form-horizontal' } do |f|
   = f.input :book_file, as: :file
   = f.submit "Create", class: 'button'
-
