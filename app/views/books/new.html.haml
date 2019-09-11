@@ -1,25 +1,42 @@
-
-
 :javascript
   function deleteRow(row) {
-  var i = row.parentNode.parentNode.rowIndex;
-  document.getElementById('POITable').deleteRow(i);
+    var i = row.parentNode.parentNode.rowIndex;
+    document.getElementById('POITable').deleteRow(i);
   }
   
-  
   function insRow() {
-  var x = document.getElementById('POITable');
-  var new_row = x.rows[1].cloneNode(true);
-  var len = x.rows.length;
-  new_row.cells[0].innerHTML = len;
+    var x = document.getElementById('POITable');
+    var new_row = x.rows[1].cloneNode(true);
+    var len = x.rows.length;
+    new_row.cells[0].innerHTML = len;
   
-  var inp1 = new_row.cells[1].getElementsByTagName('input')[0];
-  inp1.id += len;
-  inp1.value = '';
-  var inp2 = new_row.cells[2].getElementsByTagName('input')[0];
-  inp2.id += len;
-  inp2.value = '';
-  x.appendChild(new_row);
+    var inp1 = new_row.cells[1].getElementsByTagName('input')[0];
+    inp1.id += len;
+    inp1.value = '';
+
+    var inp2 = new_row.cells[2].getElementsByTagName('input')[0];
+    inp2.id += len;
+    inp2.value = '';
+
+    var inp2 = new_row.cells[3].getElementsByTagName('input')[0];
+    inp2.id += len;
+    inp2.value = '';
+    x.appendChild(new_row);
+
+    var inp2 = new_row.cells[4].getElementsByTagName('input')[0];
+    inp2.id += len;
+    inp2.value = '';
+    x.appendChild(new_row);
+
+    var inp2 = new_row.cells[5].getElementsByTagName('input')[0];
+    inp2.id += len;
+    inp2.value = '';
+    x.appendChild(new_row);
+    
+    var inp2 = new_row.cells[6].getElementsByTagName('input')[0];
+    inp2.id += len;
+    inp2.value = '';
+    x.appendChild(new_row);
   }
 
 #POItablediv
@@ -35,50 +52,42 @@
       %td Возрастные ограничениия
       %td 
       %td
-
     %tr
       %td 1
       %td
-        %input#latbox{:type => "text"}
+        %input{:name =>"Name",:type => "text"}
       %td
-        %input#latbox1{:type => "text"}
+        %input{:name => "Author",:type => "text"}
       %td
-        .input-group.mb-3
-        .input-group-prepend
-          %label.input-group-text{:for => "inputGroupSelect01"}
-          %select#inputGroupSelect01.custom-select
-            %option{:selected => "selected"} Нет
-            %option{:value => "Художественная литература"} Художественная литература 
-            %option{:value => "Книги для детей"} Книги для детей
-            %option{:value => "Образование"} Образование
-            %option{:value => "Наука и техника "} Наука и техника 
-            %option{:value => "Общество"} Общество
-            %option{:value => "Деловая литература"} Деловая литература
-            %option{:value => "Красота"} Красота
-            %option{:value => "Здоровье"} Здоровье
-            %option{:value => "Спорт"} Спорт
-            %option{:value => "Увлечения"} Увлечения
-            %option{:value => "Психология"} Психология
-            %option{:value => "Эзотерика"} Эзотерика
-            %option{:value => "Философия и религия"} Философия и религия
-            %option{:value => "Искусство"} Искусство
-            %option{:value => "Подарочные издания"} Подарочные издания
-            %option{:value => "Книги на иностранных языках"} Книги на иностранных языках
+        %input{:name => "Heading",:list => "heading"}
+        %datalist#heading
+          %option Художественная литература
+          %option Книги для детей
+          %option Образование
+          %option Наука и техника
+          %option Деловая литература
+          %option Красота
+          %option Здоровье
+          %option Спорт
+          %option Увлечения
+          %option Психология
+          %option Эзотерика
+          %option Философия и религия
+          %option Искусство
+          %option Подарочные издания
+          %option Книги на иностранных языках
       %td
-        %input#latbox1{:type => "text"}
+        %input{:name => "Publisher",:type => "text"}
       %td
-        %input#latbox1{:type => "number"}
+        %input{:name => "YearPublishing", :type => "number"}
       %td
-        .input-group.mb-3
-        .input-group-prepend
-          %label.input-group-text{:for => "inputGroupSelect01"}
-          %select#inputGroupSelect01.custom-select
-            %option{:selected => "selected"} Нет
-            %option{:value => "0"} 0+ 
-            %option{:value => "6"} 6+
-            %option{:value =>"12"} 12+
-            %option{:value => "16"} 16+
-            %option{:value => "18"} 18+
+        %input{:name => "AgeRestrictions",:list => "age_restrictions"}
+        %datalist#age_restrictions
+          %option 0+
+          %option 6+
+          %option 12+
+          %option 16+
+          %option 18+
       %td 
         %input#delPOIbutton{:onclick => "deleteRow(this)", :type => "image",  :src => "del.png" }
       %td
