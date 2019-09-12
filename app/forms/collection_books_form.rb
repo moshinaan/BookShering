@@ -1,7 +1,7 @@
 require 'roo'
 
 class CollectionBooksForm < Tramway::Core::ExtendedApplicationForm
-  properties :book_file, :user_id
+  properties :book_file, :user_id,:name, :author, :heading, :publisher, :year_publishing, :age_restrictions
 
   def submit(params)
     value = params[:book_file]
@@ -14,7 +14,7 @@ class CollectionBooksForm < Tramway::Core::ExtendedApplicationForm
       author = Author.find_or_create_by! name: author_name
       heading = Heading.find_or_create_by! name: heading_name
       publisher = Publisher.find_or_create_by! name: publisher_name
-
+  
       book = Book.create name: row[0], author: author, heading: heading, 
         publisher: publisher, year_publishing: row[4], age_restrictions: row[5], 
         status: 'доступна', user_id: params[:user_id], 
@@ -22,4 +22,5 @@ class CollectionBooksForm < Tramway::Core::ExtendedApplicationForm
     end
     super
   end
+
 end

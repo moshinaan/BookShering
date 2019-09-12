@@ -4,9 +4,8 @@ class Book < ApplicationRecord
   belongs_to :heading
   belongs_to :user
   has_many :bookcases
-
+  
   validates :name, presence: true#, uniqueness: { case_sensitive: false }
-
   #validates :author_id,  presence: true
   validates :year_publishing,  presence: true
   year_publishing = 0000..9999
