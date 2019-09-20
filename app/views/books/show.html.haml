@@ -2,34 +2,37 @@
 %table
   %tr
     %td
-      Название
+      = @book.author
     %td
       = @book.name
   %tr
-    %td
-      Статус
+    %td Статус
     %td
       = @book.status
   %tr
-    %td
-      Автор
-    %td
-      = @book.author
-  %tr
-    %td
-      Возрастные ограничения
+    %td Возрастные ограничения
     %td
       = @book.age_restrictions
       + 
   %tr
-    %td
-      Издательство
+    %td Издательство
     %td
       = @book.publisher
   %tr
-    %td
-      Год издания
+    %td Год издания
     %td
       = @book.year_publishing
+  %tr 
+    %td Владелец книги:
+    %td 
+      = @book.user
+  %tr 
+    %td Текущий пользователь
+    %td
+      = @book.current_user
+  %tr
+    %td Дата создания
+    %td
+      = @book.created_at
 
   

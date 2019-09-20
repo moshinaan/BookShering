@@ -9,7 +9,7 @@ class BookDecorator < Tramway::Core::ApplicationDecorator
     end
 
     def show_attributes
-      [:name, :author,:heading, :publisher, :year_publishing, :age_restrictions]
+      [:name, :author,:heading, :publisher, :year_publishing, :age_restrictions, :user
     end
   end
 

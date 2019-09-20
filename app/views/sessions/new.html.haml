@@ -1,4 +1,7 @@
 = simple_form_for @user, url: { controller: :sessions, action: :create}, method: :post, html: { multipart: true }, input_html: { class: 'form-horizontal' } do |f|
+  %p ''
+  %p '' 
+  %p
   %table
     %true
 
@@ -18,3 +21,6 @@
       %td
       %td{:colspan => "5"}
         = f.submit "Войти"
+
+
+

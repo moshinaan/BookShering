@@ -10,4 +10,16 @@ class Web::BookDecorator < Tramway::Core::ApplicationDecorator
   def publisher
     object.publisher&.name
   end
+
+  def user
+    object.user&.name
+  end
+
+  def current_user
+    object.user&.name
+  end
+
+  def created_at
+  	object.created_at.strftime("%m/%d/%Y")
+  end
 end
