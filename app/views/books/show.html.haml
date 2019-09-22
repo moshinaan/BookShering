@@ -1,38 +1,40 @@
-Информация о книге
-%table
-  %tr
-    %td
-      = @book.author
-    %td
-      = @book.name
-  %tr
-    %td Статус
-    %td
-      = @book.status
-  %tr
-    %td Возрастные ограничения
-    %td
-      = @book.age_restrictions
-      + 
-  %tr
-    %td Издательство
-    %td
-      = @book.publisher
-  %tr
-    %td Год издания
-    %td
-      = @book.year_publishing
-  %tr 
-    %td Владелец книги:
-    %td 
-      = @book.user
-  %tr 
-    %td Текущий пользователь
-    %td
-      = @book.current_user
-  %tr
-    %td Дата создания
-    %td
-      = @book.created_at
+%script{:src => "//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"}
+%script{:src => "//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"}
 
-  
+.container
+  .row
+    .col-md-6.img
+      %img.img-rounded{:alt => "", :src => "https://us.123rf.com/450wm/sn333g/sn333g1709/sn333g170900208/86750122-man-reading-a-book-blue-vector-outline-icon-on-dark-background.jpg?ver=6"}/
+    .col-md-6.details
+      %blockquote
+        %h1
+          = @book.author
+        %h1   
+          = @book.name
+        %small
+          %cite{:title => "Source Title"}
+            Издательство:
+            = @book.publisher 
+            ,
+            = @book.year_publishing
+            год
+            %i.icon-map-marker
+        %small
+          %cite{:title => "Source Title"}
+            Возрастные ограничения:
+            = @book.age_restrictions 
+            +
+            %i.icon-map-marker    
+      %p
+        Владелец книги:
+        = @book.user
+      %p
+        Текущий пользоатель:
+        = @book.user
+      %p
+        Добавлена на сайт:
+        = @book.created_at
+
+      %p
+        = @book.status
+        %button.btn.btn-dark{:type => "button"} На полку
