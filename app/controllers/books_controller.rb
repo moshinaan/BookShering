@@ -13,6 +13,15 @@ class BooksController < ApplicationController
     @book = CollectionBooksForm.new Book.new
   end
 
+  def update
+    @book_form = BookForm.new Book.find params[:id]
+    if @book_form.submit book_params[:status => 'недоступен']
+       redirect_to book_path user_path current_user
+    else 
+      render "index"
+    end 
+  end
+
   def create
     @book = CollectionBooksForm.new Book.new
     params[:book][:user_id] = current_user.id
@@ -23,4 +32,10 @@ class BooksController < ApplicationController
       render 'new'
     end
   end
+
+  private
+  def book_params
+    params.require(:book).permit(:name, :author, :publisher , :year_publishing, :age_restrictions,
+      :user, :status,:current_user)
+  end 
 end

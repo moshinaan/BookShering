@@ -1,40 +1,43 @@
-%script{:src => "//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"}
-%script{:src => "//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"}
+= form_with(model_form: @book, local: true) do |form|
 
-.container
-  .row
-    .col-md-6.img
-      %img.img-rounded{:alt => "", :src => "https://us.123rf.com/450wm/sn333g/sn333g1709/sn333g170900208/86750122-man-reading-a-book-blue-vector-outline-icon-on-dark-background.jpg?ver=6"}/
-    .col-md-6.details
-      %blockquote
-        %h1
-          = @book.author
-        %h1   
-          = @book.name
-        %small
-          %cite{:title => "Source Title"}
-            Издательство:
-            = @book.publisher 
-            ,
-            = @book.year_publishing
-            год
-            %i.icon-map-marker
-        %small
-          %cite{:title => "Source Title"}
-            Возрастные ограничения:
-            = @book.age_restrictions 
-            +
-            %i.icon-map-marker    
-      %p
-        Владелец книги:
-        = @book.user
-      %p
-        Текущий пользоатель:
-        = @book.user
-      %p
-        Добавлена на сайт:
-        = @book.created_at
 
-      %p
-        = @book.status
-        %button.btn.btn-dark{:type => "button"} На полку
+  %script{:src => "//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"}
+  %script{:src => "//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"}
+
+  .container
+    .row
+      .col-md-6.img
+        %img.img-rounded{:alt => "", :src => "https://us.123rf.com/450wm/sn333g/sn333g1709/sn333g170900208/86750122-man-reading-a-book-blue-vector-outline-icon-on-dark-background.jpg?ver=6"}/
+      .col-md-6.details
+        %blockquote
+          %h1
+            = @book.author
+          %h1   
+            = @book.name
+          %small
+            %cite{:title => "Source Title"}
+              Издательство:
+              = @book.publisher 
+              ,
+              = @book.year_publishing
+              год
+              %i.icon-map-marker
+          %small
+            %cite{:title => "Source Title"}
+              Возрастные ограничения:
+              = @book.age_restrictions 
+              +
+              %i.icon-map-marker  
+        %p
+          Владелец книги:
+          = @book.user
+        %p
+          Текущий пользоатель:
+          = @book.current_user
+        %p
+          Добавлена на сайт:
+          = @book.created_at
+
+        %p
+          = @book.status
+          = form.submit "Добавить к себе"
