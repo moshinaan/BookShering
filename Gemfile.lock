@@ -237,6 +237,8 @@ GEM
     pg_search (2.3.0)
       activerecord (>= 4.2)
       activesupport (>= 4.2)
+    polyamorous (2.3.0)
+      activerecord (>= 5.0)
     popper_js (1.14.5)
     pry (0.12.2)
       coderay (~> 1.1.0)
@@ -275,6 +277,12 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (12.3.3)
+    ransack (2.3.0)
+      actionpack (>= 5.0)
+      activerecord (>= 5.0)
+      activesupport (>= 5.0)
+      i18n
+      polyamorous (= 2.3.0)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
@@ -322,6 +330,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    selectize-rails (0.12.6)
     selenium-webdriver (3.142.4)
       childprocess (>= 0.5, < 3.0)
       rubyzip (~> 1.2, >= 1.2.2)
@@ -350,15 +359,17 @@ GEM
     tilt (2.0.9)
     time_difference (0.7.0)
       activesupport (~> 5.1)
-    tramway-admin (1.12.2)
+    tramway-admin (1.16.0.2)
       bootstrap-kaminari-views (= 0.0.5)
       ckeditor (= 4.2.4)
       copyright_mafa (~> 0.1.2, >= 0.1.2)
       font-awesome-rails (~> 4.7, >= 4.7.0.1)
       kaminari (~> 1.1.1, >= 1.1.1)
+      ransack
+      selectize-rails
       state_machine_buttons (~> 0.4.1, >= 0.4.1)
-    tramway-auth (1.0.2)
-    tramway-core (1.10.3)
+    tramway-auth (1.1.0.1)
+    tramway-core (1.13.0.2)
       audited (>= 4.8.0)
       bootstrap (>= 4.1.2)
       carrierwave
@@ -374,9 +385,9 @@ GEM
       rmagick (~> 2.16, >= 2.16.0)
       sass-rails (~> 5.0, >= 5.0.7)
       simple_form (~> 3.5, >= 3.5.0)
-    tramway-landing (1.7.1.1)
+    tramway-landing (1.8)
     tramway-profiles (1.3.1)
-    tramway-user (2.0)
+    tramway-user (2.1)
       bcrypt (~> 3.1.11, >= 3.1.11)
       enumerize (~> 2.1, >= 2.1.2)
     trap (2.1)
@@ -442,12 +453,12 @@ DEPENDENCIES
   state_machine!
   state_machine_buttons
   time_difference
-  tramway-admin (= 1.12.2)
-  tramway-auth (= 1.0.2)
-  tramway-core (= 1.10.3)
-  tramway-landing (= 1.7.1.1)
+  tramway-admin (= 1.16.0.2)
+  tramway-auth (= 1.1.0.1)
+  tramway-core (= 1.13.0.2)
+  tramway-landing (= 1.8)
   tramway-profiles (= 1.3.1)
-  tramway-user (= 2.0)
+  tramway-user (= 2.1)
   trap
   turbolinks (~> 5)
   tzinfo-data
