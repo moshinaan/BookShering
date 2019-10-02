@@ -16,7 +16,6 @@ class BooksController < ApplicationController
   def create
     @book = CollectionBooksForm.new Book.new
     params[:book][:user_id] = current_user.id
-    params[:book][:user_current] = current_user.id
     if @book.submit params[:book]
       redirect_to book_path user_path current_user
     else

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
   
   resources :books
-  post '/books/:id(.:format)', to: 'books#update'
+  post '/books/:id(.:format)', to: 'book_case#create'
 
   mount Tramway::Admin::Engine, at: '/admin'
   mount Tramway::Auth::Engine, at: '/auth'  

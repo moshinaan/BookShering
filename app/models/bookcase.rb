@@ -1,4 +1,5 @@
 class Bookcase < ApplicationRecord
 	has_many :books, class_name: 'Book'
-	validates :name,  presence: true
+	belongs_to :books
+	belongs_to :user
 end
