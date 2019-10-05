@@ -27,6 +27,7 @@ gem 'tramway-core', '1.13.0.2'
 gem 'tramway-landing', '1.8'
 gem 'tramway-profiles', '1.3.1'
 gem 'tramway-user', '2.1'
+gem 'selectize-rails'
 
 gem 'state_machine', github: 'seuros/state_machine'
 gem 'pg_search'

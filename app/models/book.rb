@@ -3,7 +3,7 @@ class Book < ApplicationRecord
   belongs_to :publisher
   belongs_to :heading
   belongs_to :user
-  has_many :bookcases
+  belongs_to :bookcases
   
   validates :name, presence: true#, uniqueness: { case_sensitive: false }
   #validates :author_id,  presence: true

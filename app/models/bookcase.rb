@@ -1,5 +1,4 @@
-class Bookcase < ApplicationRecord
-	has_many :books, class_name: 'Book'
-	belongs_to :books
+class Bookcase < ApplicationRecord	
+	belongs_to :book
 	belongs_to :user
 end
