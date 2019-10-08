@@ -28,12 +28,8 @@
           Владелец книги:
           = @book.user
         %p
-          Текущий пользоатель:
-          = @book.current_user
-        %p
           Добавлена на сайт:
           = @book.created_at
 
         %p
-          = @book.status
           = form.submit "Добавить к себе"

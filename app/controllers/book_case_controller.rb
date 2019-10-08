@@ -1,4 +1,5 @@
 class BookCaseController < ApplicationController
+	
 	before_action :authenticate, only: [:new, :create]
 	def new
 	   @bookcase = Bookcase.new

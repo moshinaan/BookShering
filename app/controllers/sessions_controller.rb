@@ -11,8 +11,6 @@ class SessionsController < ApplicationController
       #войти
       log_in @user
       @current_user = current_user
-      # NOTE имплементируем позже
-      #params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
       redirect_to @user
    	else  
       if @user.class == NilClass

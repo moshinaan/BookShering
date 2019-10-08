@@ -4,7 +4,6 @@ class BookForm < Tramway::Core::ApplicationForm
     def initialize(object)
     	super(object).tap do
     		form_properties name: :text,
-    		                status: :text,
     		                author: :string,
                             heading: :string,
     		                publisher: :string,

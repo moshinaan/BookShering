@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191002173502) do
+ActiveRecord::Schema.define(version: 20191008150135) do
 
   create_table "audits", force: :cascade do |t|
     t.integer "auditable_id"
@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 20191002173502) do
   end
 
   create_table "books", force: :cascade do |t|
-    t.string "status"
     t.integer "year_publishing"
     t.integer "age_restrictions"
     t.integer "user_id"
@@ -63,7 +62,6 @@ ActiveRecord::Schema.define(version: 20191002173502) do
     t.text "state"
     t.text "name"
     t.integer "author_id"
-    t.integer "heading"
     t.integer "publisher_id"
     t.integer "heading_id"
     t.integer "bookcases_id"
