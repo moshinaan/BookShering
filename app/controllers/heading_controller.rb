@@ -1,6 +1,5 @@
 class HeadingController < ApplicationController
 	def index
-		@headings = Heading.all
-		binding.pry
+      @heading = Heading.all
 	end
 end

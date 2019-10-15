@@ -6,14 +6,13 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   get 'sessions/new'
-  
-  resources :books
   post '/books/:id(.:format)', to: 'book_case#create'
-
   mount Tramway::Admin::Engine, at: '/admin'
   mount Tramway::Auth::Engine, at: '/auth'  
   root to: 'web/welcome#index'
+  resources :books
   resources :users
   resources :heading
+  resources :publisher 
 
 end
