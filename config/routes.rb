@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   mount Tramway::Auth::Engine, at: '/auth'  
   root to: 'web/welcome#index'
   resources :users
+  resources :heading
 
 end
