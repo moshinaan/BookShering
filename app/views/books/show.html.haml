@@ -28,8 +28,10 @@
           Владелец книги:
           = @book.user
         %p
+          = @state
+        %p
           Добавлена на сайт:
           = @book.created_at
 
         %p
-          = form.submit "Добавить к себе"
+          = form.submit value="Добавить к себе"
