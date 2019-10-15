@@ -6,7 +6,7 @@ class BookCaseController < ApplicationController
 	end 
 
 	def create
-	  @bookcase = Bookcase.new(user_id: current_user.id, book_id: "1", taken_at: Time.now )
+	  @bookcase = Bookcase.new(user_id: current_user.id, book_id: params[:id], taken_at: Time.now )
 	  if @bookcase.save
 	  else
 	  	render 'welcome#index'
