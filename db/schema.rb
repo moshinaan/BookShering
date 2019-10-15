@@ -64,7 +64,6 @@ ActiveRecord::Schema.define(version: 20191008150135) do
     t.integer "author_id"
     t.integer "publisher_id"
     t.integer "heading_id"
-    t.integer "bookcases_id"
     t.index ["user_id"], name: "index_books_on_user_id"
   end
 
