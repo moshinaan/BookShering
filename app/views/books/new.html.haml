@@ -1,10 +1,8 @@
-%p  kgkg
-%p  kgkgk
 = simple_form_for @book, url: {action: "create"}, html: { class: 'form-horizontal' }, 
   input_html: { class: 'form-horizontal' } do |f|
 
 
-  = f.input :book_file, as: :file
+  = f.input :book_file, as: :file, input_html:{accept: '.xls,.ods,.xlsx'} 
 
   = f.submit "Create"
 
