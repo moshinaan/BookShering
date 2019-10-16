@@ -1,4 +1,4 @@
 %ul
   - @headings.each do |h|
     %li
-      = h
+      = link_to h.first, heading_path(h.last)
