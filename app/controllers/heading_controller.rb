@@ -1,7 +1,8 @@
 class HeadingController < ApplicationController
 	def index
-      @heading = HeadingDecorator.new  Heading.all
-
+      @headings = Heading.all.map.pluck(:name) do |h|
+      	HeadingDecorator.new  h
+      end
       binding.pry
 	end
 end

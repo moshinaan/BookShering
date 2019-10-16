@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  layout 'tramway/landing/application'
 
   def current_user
     @current_user = current_user
