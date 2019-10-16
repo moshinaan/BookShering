@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < ApplicationController 
 
   def current_user
     @current_user = current_user
