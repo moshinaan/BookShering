@@ -2,6 +2,6 @@
   - @books.each do |h|
     %li
       %p 
-        = h.name
+        = link_to h.name, book_path(h.id)
       %p 
         = h.author
