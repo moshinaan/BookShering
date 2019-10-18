@@ -13,8 +13,6 @@ class BookDecorator < Tramway::Core::ApplicationDecorator
     end
   end
 
-  delegate :bookcases, to: :object
-
   def author
     object.author&.name
   end

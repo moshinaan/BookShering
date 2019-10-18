@@ -10,6 +10,10 @@ class UsersController < ApplicationController
     @books = Book.where(user_id:  params[:id]).map do |h|
       BookDecorator.new  h
     end
+
+    @bookcase = Bookcase.where(user_id:params[:id]).map do |h|
+      BookCaseDecorator.new h
+    end
   end
 
   def new

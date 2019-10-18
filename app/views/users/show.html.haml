@@ -32,3 +32,11 @@
         = link_to h.name, book_path(h.id)
       %p 
         = h.author
+Книжная полка
+%ul
+  - @bookcase.each do |h|
+    %li
+      %p 
+        = link_to h.book_name, book_path(h.book_id)
+      %p 
+        = h.author
