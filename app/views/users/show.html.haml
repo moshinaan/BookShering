@@ -23,3 +23,12 @@
       Город:
     %td
       = @user.city
+
+Добавленные книги
+%ul
+  - @books.each do |h|
+    %li
+      %p 
+        = link_to h.name, book_path(h.id)
+      %p 
+        = h.author
