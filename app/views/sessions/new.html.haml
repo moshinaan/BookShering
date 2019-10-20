@@ -1,26 +1,21 @@
 = simple_form_for @user, url: { controller: :sessions, action: :create}, method: :post, html: { multipart: true }, input_html: { class: 'form-horizontal' } do |f|
-  %p ''
-  %p '' 
-  %p
-  %table
-    %true
-
-  %table
-    %tr
-      %td
-        = f.label :email
-      %td
-        = f.input :email, as: :string, label: false
-    %tr
-      %td
-        = f.label :password
-      %td
-        = f.input_field :password
-        = f.error :password
-    %tr
-      %td
-      %td{:colspan => "5"}
-        = f.submit "Войти"
+  .container
+    .row
+      %table
+        %tr
+          %td
+            = f.label :email
+          %td
+            = f.input :email, as: :string, label: false
+        %tr
+          %td
+            = f.label :password
+          %td
+            = f.input_field :password
+            = f.error :password
+        %tr
+          %td{:colspan => "15"}
+            = f.submit "Авторизоваться"
 
 
 
