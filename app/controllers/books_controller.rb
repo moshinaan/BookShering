@@ -7,7 +7,7 @@ class BooksController < ApplicationController
   def show
     book_id = params[:id]
     if (Bookcase.find_by book_id:  book_id) && (Bookcase.find_by returned_at: nil)
-      @state = 'недоступна'
+      @state = 'запрошена'
     else
       @state = 'доступна'
     end
@@ -23,7 +23,7 @@ class BooksController < ApplicationController
     @book = CollectionBooksForm.new Book.new
     params[:book][:user_id] = current_user.id
     if @book.submit params[:book]
-      redirect_to book_path 
+      redirect_to current_user 
     else
       render 'new'
     end
