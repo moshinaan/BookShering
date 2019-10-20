@@ -1,4 +1,11 @@
-%ul
-  - @headings.each do |h|
-    %li
-      = link_to h.first, heading_path(h.last)
+.container
+  .row
+    %h1 Жанры книг, доступные сейчас
+    .heading_list
+      - @headings.each do |h|
+        %li
+          = link_to h.first, heading_path(h.last)
+:css
+    .heading_list{
+      column-count: 3;
+    }
