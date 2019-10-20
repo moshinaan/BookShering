@@ -1,7 +1,12 @@
-%ul
-  - @books.each do |h|
-    %li
-      %p 
+.container
+  .row
+    .books
+      - @books.each do |h|
         = link_to h.name, book_path(h.id)
-      %p 
-        = h.author
+        %p 
+          = h.author
+
+:css
+    .books{
+      column-count: 5;
+    }
