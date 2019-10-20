@@ -1,42 +1,43 @@
 = simple_form_for @user, url: {action: "create"}, html: { multipart: true }, input_html: { class: 'form-horizontal' } do |f|
-
-  %table
-    %tr
-      %td
-        = f.label :name
-      %td
-        = f.input_field :name
-        = f.error :name 
-    %tr
-      %td
-        = f.label :email
-      %td
-        = f.input_field :email,  placeholder: 'user@domain.com'
-        = f.error :email
-    %tr
-      %td
-        = f.label :date_birth
-      %td
-        = f.date_field :date_birth, as: :date
-        = f.error :date
-    %tr
-      %td
-        = f.label :city
-      %td
-        = f.input_field :city
-        = f.error :city
-    %tr
-      %td
-        = f.label :password
-      %td
-        = f.input_field :password
-        = f.error :password
-    %tr
-      %td
-        = f.label :password_confirmation
-      %td
-        = f.input_field :password_confirmation
-        = f.error :password_confirmation
+  .container
+    .row
+    %table
+      %tr
+        %td
+          = f.label :name
+        %td
+          = f.input_field :name
+          = f.error :name 
+      %tr
+        %td
+          = f.label :email
+        %td
+          = f.input_field :email,  placeholder: 'user@domain.com'
+          = f.error :email
+      %tr
+        %td
+          = f.label :date_birth
+        %td
+          = f.date_field :date_birth, as: :date
+          = f.error :date
+      %tr
+        %td
+          = f.label :city
+        %td
+          = f.input_field :city
+          = f.error :city
+      %tr
+        %td
+          = f.label :password
+        %td
+          = f.input_field :password
+          = f.error :password
+      %tr
+        %td
+          = f.label :password_confirmation
+        %td
+          = f.input_field :password_confirmation
+          = f.error :password_confirmation
 
     %tr
       %td
