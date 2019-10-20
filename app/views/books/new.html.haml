@@ -1,18 +1,24 @@
-.card{:style => "width: 18rem;"}
-  %img.card-img-top{:alt => "...", :src => "https://s7d4.scene7.com/is/image/roomandboard/074365_wood_W"}/
-  .card-body
-    %h5.card-title 
-      Card title
-    %p.card-text 
-      Some quick example text to build on the card title and make up the bulk of the card's content.
-    %a.btn.btn-primary{:href => "#"} Go somewhere
-
-
 = simple_form_for @book, url: {action: "create"}, html: { class: 'form-horizontal' }, 
   input_html: { class: 'form-horizontal' } do |f|
 
+  .container
+    .row
+      .col-md-6.details
+        %p Чтобы добавить книги на сайт, необходимо загрузить файл со списком в файле xls, xlsx или ods.
+        %p Таблицу с книгами нужно отформатировать следующим образом:
+        %p В первой калонке указываем название книги, далее автора, жанр, издател		ьство, год издания, возрастные ограничения
+        %p Ниже приведен пример заполнения таблицы книг
+        
+      .col-md-6.details
+        = f.input :book_file, as: :file, input_html:{accept: '.xls,.ods,.xlsx'}
+        = f.submit "загрузить книги на сайт"
 
-  = f.input :book_file, as: :file, input_html:{accept: '.xls,.ods,.xlsx'} 
+      %img.img-rounded{:alt => "", :src => "https://sun9-27.userapi.com/c855132/v855132495/134c24/VtnHABJo1DI.jpg"}/
 
-  = f.submit "Create"
+
+
+
+
+
+  
 
