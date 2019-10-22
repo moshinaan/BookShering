@@ -159,16 +159,16 @@
       %a.nav-item{:href => ""}
         Букшеринг
       %li.dropdown
-        %a{"data-toggle" => "dropdown", :href => 'welcome#index'}
+        %a{"data-toggle" => "dropdown", :href => '#'}
           Книги на сайте
           %span.caret
         %ul.dropdown-menu
           %li
-            %a{:href => "heading"} Жанры
+            = link_to 'Жанры', '/heading'
           %li
-            %a{:href => "publisher"} Издательство
+            = link_to 'Издательства', '/publisher'
           %li
-            %a{:href => "author"} Автор    
+            = link_to 'Авторы', '/author'    
       %a.nav-item{:href => "/signup"}
         Регистарция
       %a.nav-item{:href => "/login"}
