@@ -1,0 +1,11 @@
+.container
+  .row
+    %h1 Издательства на сайте
+    .heading_list
+      - @publishers.each do |h|
+        %li
+          = link_to h.first, publisher_path(h.last)
+:css
+    .heading_list{
+      column-count: 3;
+    }

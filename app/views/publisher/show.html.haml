@@ -1,0 +1,12 @@
+.container
+  .row
+    .books
+      - @books.each do |h|
+        = link_to h.name, book_path(h.id)
+        %p 
+          = h.author
+
+:css
+    .books{
+      column-count:3 ;
+    }
