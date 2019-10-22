@@ -155,40 +155,24 @@
         resize: none;
       }
 
-
-  %body#myPage{"data-offset" => "50", "data-spy" => "scroll", "data-target" => ".navbar"}
-    %nav.navbar.navbar-default.navbar-fixed-top
-      .container-fluid
-        .navbar-header
-          %button.navbar-toggle{"data-target" => "#myNavbar", "data-toggle" => "collapse", :type => "button"}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.navbar-brand{:href => "#myPage"} Букшеринг
-        #myNavbar.collapse.navbar-collapse
-          %ul.nav.navbar-nav.navbar-right
-            %li
-              %a{:href => "#myPage"} О движении
-            %li
-              %a{:href => "#band"} BAND
-            %li
-              %a{:href => "#tour"} TOUR
-            %li
-              %a{:href => "#contact"} CONTACT
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                MORE
-                %span.caret
-              %ul.dropdown-menu
-                %li
-                  %a{:href => "#"} Merchandise
-                %li
-                  %a{:href => "#"} Extras
-                %li
-                  %a{:href => "#"} Media
-            %li
-              %a{:href => "#"}
-                %span.glyphicon.glyphicon-search
+    %nav.navbar.navbar-dark.bg-dark
+      %a.nav-item{:href => ""}
+        Букшеринг
+      %li.dropdown
+        %a{"data-toggle" => "dropdown", :href => 'welcome#index'}
+          Книги на сайте
+          %span.caret
+        %ul.dropdown-menu
+          %li
+            %a{:href => "heading"} Жанры
+          %li
+            %a{:href => "publisher"} Издательство
+          %li
+            %a{:href => "author"} Автор    
+      %a.nav-item{:href => "/signup"}
+        Регистарция
+      %a.nav-item{:href => "/login"}
+        Войти
 
 
     / Container (The Band Section)
