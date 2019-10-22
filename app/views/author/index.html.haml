@@ -1,0 +1,11 @@
+.container
+  .row
+    %h1 Список доступных авторов
+    .heading_list
+      - @authors.each do |h|
+        %li
+          = link_to h.first, author_path(h.last)
+:css
+    .heading_list{
+      column-count: 3;
+    }

@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   resources :users
   resources :heading
   resources :publisher 
+  resources :author
 
 end
