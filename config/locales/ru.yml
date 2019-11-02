@@ -2,8 +2,23 @@ ru:
   activerecord:
     models:
       user: Пользователь
-      tramway/user/user: Админ
+      tramway/user/user: Админинстратор
+      book: Книга
+      author: Автор
+      publisher: Издадательство
   cases:
     user:
       plural: Пользователи
-      genitive: пользователя+
+      genitive: пользователя
+    tramway/user/user:
+      plural: Администраторы
+      genitive: администратора
+    book:
+      plural: Книги
+      genitive: книгу
+    author:
+      plural: Авторы
+      genitive: автора
+    publisher:
+      plural: Издадательства
+      genitive: издательство
