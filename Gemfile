@@ -10,7 +10,7 @@ end
 
 gem 'rails', '~> 5.1.7'
 gem 'bcrypt','3.1.12'
-gem 'sqlite3'
+gem 'pg'
 gem 'puma', '~> 3.7'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'uglifier', '>= 1.3.0'

@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20191008150135) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "audits", force: :cascade do |t|
     t.integer "auditable_id"
     t.string "auditable_type"
@@ -80,9 +83,6 @@ ActiveRecord::Schema.define(version: 20191008150135) do
     t.datetime "updated_at", null: false
     t.text "state"
   end
-
-# Could not dump table "tramway_landing_blocks" because of following StandardError
-#   Unknown type 'jsonb' for column 'button'
 
   create_table "tramway_user_users", force: :cascade do |t|
     t.text "email"
