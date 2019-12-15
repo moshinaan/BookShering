@@ -52,6 +52,7 @@ gem 'time_difference'
 gem 'font_awesome5_rails'
 gem 'roo'
 gem 'validates'
+gem 'ransack'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
