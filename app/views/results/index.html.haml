@@ -1,6 +1,22 @@
-%h3
-  \Результаты поиска по запросу
-  %em= params[:query]
-- @search_results.each do |result|
-  %h4= link_to result.name, result
-  %hr
+.container
+  %h1	
+    \Результаты поиска по запросу
+    %em= params[:query]
+  %table.table
+    %thead
+      %tr
+        %th Название
+        %th Автор
+        %th Жанр
+        %th Год издания
+    %tbody
+      - @search_results.each do |result|
+        %tr
+          %td 
+            = link_to result.name, result
+          %td
+            = link_to result.author.name, author_path(result.author_id)
+          %td
+            = link_to result.heading.name, heading_path(result.heading_id)
+          %td
+            = result.year_publishing

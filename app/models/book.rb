@@ -11,5 +11,5 @@ class Book < ApplicationRecord
   validates :year_publishing,  presence: true
   year_publishing = 0000..9999
 
-   pg_search_scope :search_everywhere, against: [:name,:year_publishing ]
+   pg_search_scope :search_everywhere, against: [:name,:year_publishing]
 end
