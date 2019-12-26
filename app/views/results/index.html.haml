@@ -1,0 +1,6 @@
+%h3
+  \Результаты поиска по запросу
+  %em= params[:query]
+- @search_results.each do |result|
+  %h4= link_to result.name, result
+  %hr
