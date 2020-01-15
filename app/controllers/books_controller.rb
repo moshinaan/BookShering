@@ -1,7 +1,8 @@
 class BooksController < ApplicationController
   before_action :authenticate, only: [:new, :create]
   def index
-    @books = Book.all.page(10).per(10)
+    @q = Book.ransack(params[:q])
+    @books = @q.result.order(:id).page(params[:page]).per(10)
   end
 
   def show

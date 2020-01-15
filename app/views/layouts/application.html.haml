@@ -154,7 +154,7 @@
       textarea {
         resize: none;
       }
-      
+
   %body{"data-offset" => "50", "data-spy" => "scroll", "data-target" => ".navbar"}
     %nav.navbar.navbar-default.navbar-fixed-top
       .container-fluid
@@ -176,17 +176,20 @@
               = link_to 'Книжная полка', user_path(current_user)
             %li
               = link_to 'Добавить книги на сайт', '/books/new'
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                Книги на сайте
-                %span.caret
-              %ul.dropdown-menu
-                %li
-                  = link_to 'Жанры', '/heading'
-                %li
-                  = link_to 'Издательства', '/publisher'
-                %li
-                  = link_to 'Авторы', '/author'
+            %li
+              = link_to 'Книги на сайте', '/books'
+            //%li.dropdown
+            //  %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            //    = link_to 'Книги на сайте', '/books'
+            //    %span.caret
+            //  %ul.dropdown-menu
+            //    %li
+            //      = link_to 'Жанры', '/heading'
+            //    %li
+            //      = link_to 'Издательства', '/publisher'
+            //    %li
+            //      = link_to 'Авторы', '/author'
+    
     %p  .    
     %p  .
     = yield

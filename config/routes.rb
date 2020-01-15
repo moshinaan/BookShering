@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get 'sessions/new'
   post '/books/:id(.:format)', to: 'book_case#create'
+  get 'results', to: 'results#index', as: 'results'
   mount Tramway::Admin::Engine, at: '/admin'
   mount Tramway::Auth::Engine, at: '/auth'  
   root to: 'web/welcome#index'

@@ -14,6 +14,26 @@ class UsersController < ApplicationController
     @bookcase = Bookcase.where(user_id:params[:id]).map do |h|
       BookCaseDecorator.new h
     end
+    headings = Array.new
+    @result = Bookcase.where(user_id:params[:id])
+    @result.each do |result|
+      headings << result.book.heading_id
+    end
+    count_h = headings.inject(Hash.new{ 0 }){ |result, i|
+      result[i] += 1
+      result
+    }
+    count_h.sort
+    @res_h = Array.new
+    i = count_h.size
+    while i > count_h.size - 3 do
+      @res_h << count_h.keys[i-1]
+      i=i-1
+    end
+    @bookrec = Array.new
+    @res_h.each do |i|
+      @bookrec << Book.where(:heading_id==@res_h[i])
+    end
   end
 
   def new
