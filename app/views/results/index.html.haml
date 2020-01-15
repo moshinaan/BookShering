@@ -1,22 +1,34 @@
 .container
-  %h1	
-    \Результаты поиска по запросу
+  %h1
+    Результаты поиска по запросу
     %em= params[:query]
-  %table.table
-    %thead
-      %tr
-        %th Название
-        %th Автор
-        %th Жанр
-        %th Год издания
-    %tbody
-      - @search_results.each do |result|
-        %tr
-          %td 
-            = link_to result.name, result
-          %td
-            = link_to result.author.name, author_path(result.author_id)
-          %td
-            = link_to result.heading.name, heading_path(result.heading_id)
-          %td
-            = result.year_publishing
+    - @search_results.each do |pg_search_document|
+      - if pg_search_document.searchable_type == ("Author")
+        %h2 
+          = link_to pg_search_document.searchable.name, pg_search_document.searchable
+      - if pg_search_document.searchable_type == ("Heading")
+        %h2 
+          = link_to pg_search_document.searchable.name, pg_search_document.searchable
+      - if pg_search_document.searchable_type == ("Publisher")
+        %h2 
+          = link_to pg_search_document.searchable.name, pg_search_document.searchable
+      - if pg_search_document.searchable_type == ("Book")
+        %table.table
+          %thead
+            %tr
+              %th Название
+              %th Автор
+              %th Жанр
+              %th Издательство
+              %th Год издания
+            %tr
+              %td
+                = link_to pg_search_document.searchable.name, book_path(pg_search_document.searchable.id)
+              %td 
+                = link_to pg_search_document.searchable.author.name, author_path(pg_search_document.searchable.author_id)
+              %td 
+                = link_to pg_search_document.searchable.heading.name, heading_path(pg_search_document.searchable.heading_id)
+              %td 
+                = link_to pg_search_document.searchable.publisher.name, publisher_path(pg_search_document.searchable.publisher_id)
+              %td 
+                = pg_search_document.searchable.year_publishing

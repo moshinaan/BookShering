@@ -45,6 +45,16 @@
                   = link_to h.book_name, book_path(h.book_id)
                 %td 
                   = h.author
+      %tr
+        %h4#list-item-3 Реккомндации
+        .books 
+          %table
+            - @bookrec.each do |arr|
+              - arr.each do |h|
+                - if h.user_id !=  @user.id
+                  %tr
+                    %td 
+                      = link_to h.name, book_path(h.id)
 
 
 :css

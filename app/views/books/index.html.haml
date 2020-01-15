@@ -12,6 +12,7 @@
           = sort_link(@q, :name, "Название")
         %th Автор
         %th Жанр
+        %th Издательство
         %th Год издания
 
     %tbody
@@ -23,6 +24,8 @@
             = link_to book.author.name, author_path(book.author.id)
           %td 
             = link_to book.heading.name, heading_path(book.heading_id)
+          %td
+            = link_to book.publisher.name, publisher_path(book.publisher_id)
           %td 
             = book.year_publishing
     = paginate @books
