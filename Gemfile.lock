@@ -432,7 +432,7 @@ DEPENDENCIES
   pg
   pg_search
   pry
-  puma (~> 3.7)
+  puma (~> 3.12)
   railroady
   rails (~> 5.1.7)
   rails-erd
