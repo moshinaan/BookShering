@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-  -5555
   attr_accessor :remember_token
 
+  has_many :results, class_name: 'Result'
   has_many :books, class_name: 'Book'
   has_many :bookcases, class_name: 'Bookcase'
 
@@ -16,5 +16,3 @@ class User < ApplicationRecord
   has_secure_password
   validates(:password, presence: true, length: { minimum: 6 }, on: :create)
 end
-
-5
