@@ -1,7 +1,7 @@
 class ResultsController < ApplicationController
   def index
     @search_results = PgSearch.multisearch(params[:query])
-    Result.create(user_id: current_user.id, content: params[:query]) 
+    Result.find_or_create_by(user_id: current_user.id, content: params[:query]) 
   end
 
   def new

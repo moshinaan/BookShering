@@ -46,7 +46,7 @@
                 %td 
                   = h.author
       %tr
-        %h4#list-item-3 Реккомндации
+        %h4#list-item-3 Рекомендации
         .books 
           %table
             - @bookrec.each do |arr|
@@ -54,7 +54,7 @@
                 - if h.user_id !=  @user.id
                   %tr
                     %td 
-                      = link_to h.name, book_path(h.id)
+                      = link_to h.name, book_path
 
 
 :css

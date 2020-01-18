@@ -3,6 +3,7 @@ class BooksController < ApplicationController
   def index
     @q = Book.ransack(params[:q])
     @books = @q.result.order(:id).page(params[:page]).per(10)
+    @result = Result.where(user_id:current_user.id)
   end
 
   def show

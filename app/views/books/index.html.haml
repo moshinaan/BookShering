@@ -29,3 +29,18 @@
           %td 
             = book.year_publishing
     = paginate @books
+  %tr
+    %h4#list-item-3 История Ваших запросов
+    .results 
+      %table
+        - @result.each do |h|
+          - if h.content!=nil and h.content!=""
+            %tr
+              %td
+                = form_tag results_path, method: :get, role: 'search' do
+                  = text_field_tag :query, h.content
+                  = submit_tag "Перейти", name: nil
+:css
+  .results {
+    column-count: 3;
+  }
