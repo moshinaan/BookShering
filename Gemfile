@@ -11,7 +11,7 @@ end
 gem 'rails', '~> 5.1.7'
 gem 'bcrypt','3.1.12'
 gem 'pg'
-gem 'puma', '~> 3.12'
+gem 'puma', '~> 4.3'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
